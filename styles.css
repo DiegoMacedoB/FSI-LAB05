@@ -1,0 +1,54 @@
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #003366; 
+    color: white; 
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1, #habitaciones {
+    text-align: center;
+    padding: 20px;
+    color: #003366;
+    background-color: gray;
+    margin: 0;
+}
+
+
+#habitaciones {
+    text-align: center;
+    background-color: gray;
+    padding: 20px;
+}
+
+
+.habitacion {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    background-color: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.habitacion button {
+    display: block;
+    margin: 10px auto;
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.habitacion button:hover {
+    background-color: #001f4d;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Reserva de Hotel</title>
+</head>
+<body>
+    <h1>Reserva de Hotel</h1>
+    <div id="habitaciones"></div>
+
+    <script>
+        const habitaciones = [
+            { tipo: "Normal", precio: 100, disponible: true },
+            { tipo: "2 Plazas", precio: 150, disponible: true },
+            { tipo: "Suite", precio: 250, disponible: true },
+        ];
+
+        function mostrarEstadoHabitaciones() {
+            const habitacionesDiv = document.getElementById("habitaciones");
+            habitacionesDiv.innerHTML = "<h2>Estado de las Habitaciones</h2>";
+
+            habitaciones.forEach((habitacion, index) => {
+                const estado = habitacion.disponible ? "Disponible" : "Ocupada";
+                habitacionesDiv.innerHTML += `
+                    <div class="habitacion">
+                        <h3>${habitacion.tipo}</h3>
+                        <p>Precio: $${habitacion.precio}</p>
+                        <p>Estado: ${estado}</p>
+                        <button onclick="reservarHabitacion(${index})">Reservar</button>
+                    </div>
+                `;
+            });
+        }
+
+        function reservarHabitacion(index) {
+            if (habitaciones[index].disponible) {
+                habitaciones[index].disponible = false;
+                alert(`¡Habitación ${habitaciones[index].tipo} reservada con éxito por $${habitaciones[index].precio}!`);
+            } else {
+                alert(`La habitación ${habitaciones[index].tipo} ya está ocupada.`);
+            }
+
+            mostrarEstadoHabitaciones();
+        }
+
+        mostrarEstadoHabitaciones();
+    </script>
+</body>
+</html>

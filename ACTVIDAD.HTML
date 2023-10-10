@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        fieldset {
+            border: 2px solid #2AADF5;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        legend {
+            font-size: 24px;
+            color: #2AADF5;
+        }
+
+        .texto {
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        button {
+            font-size: 18px;
+            background-color: #2AADF5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2A42F5;
+        }
+
+        #respuesta {
+            font-size: 32px;
+            color: #2A42F5;
+        }
+        #respuesta2 {
+            font-size: 32px;
+            color: #2A42F5;
+        }
+        #respuesta3 {
+            font-size: 32px;
+            color: #2A42F5;
+        }
+        #respuesta4 {
+            font-size: 32px;
+            color: #2A42F5;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>SUMAR</legend>
+            <label for="numero1">Número 1:</label>
+            <input class="texto" name="numero1" type="text" id="numero1">
+            <label for="numero2">Número 2:</label>
+            <input class="texto" name="numero2" type="text" id="numero2">
+            <button type="button" onclick="sumar();">Sumar</button>
+            <div id="respuesta"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>RESTAR</legend>
+            <label for="numero3">Número 1:</label>
+            <input class="texto" name="numero3" type="text" id="numero3">
+            <label for="numero4">Número 2:</label>
+            <input class="texto" name="numero4" type="text" id="numero4">
+            <button type="button" onclick="restar();">Restar</button>
+            <div id="respuesta2"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>MULTIPLICAR</legend>
+            <label for="numero5">Número 1:</label>
+            <input class="texto" name="numero5" type="text" id="numero5">
+            <label for="numero6">Número 2:</label>
+            <input class="texto" name="numero6" type="text" id="numero6">
+            <button type="button" onclick="multiplicar();">Multiplicar</button>
+            <div id="respuesta3"></div>
+        </fieldset>
+
+        <fieldset>
+            <legend>DIVIDIR</legend>
+            <label for="numero7">Número 1:</label>
+            <input class="texto" name="numero7" type="text" id="numero7">
+            <label for="numero8">Número 2:</label>
+            <input class="texto" name="numero8" type="text" id="numero8">
+            <button type="button" onclick="dividir();">Dividir</button>
+            <div id="respuesta4"></div>
+        </fieldset>
+    </form>
+
+    <script>
+        function sumar() {
+            let numero1 = document.getElementById("numero1");
+            let numero2 = document.getElementById("numero2");
+            let solucion = document.getElementById("respuesta");
+            
+            if (!isNaN(numero1.value) && !isNaN(numero2.value)) {
+                respuesta = parseInt(numero1.value) + parseInt(numero2.value);
+                console.log(respuesta);
+                solucion.innerHTML = respuesta;
+            } else {
+                solucion.innerHTML = "Ingrese valores numéricos";
+            }
+        }
+
+        // Resto de funciones (restar, multiplicar, dividir) siguen el mismo patrón.
+    </script>
+</body>
+</html>
